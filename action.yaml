@@ -1,0 +1,5 @@
+name: "VDET for Java"
+description: "Analyses Java files for vulnerabilities"
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
