@@ -49,7 +49,7 @@ mlb = getMultilabelBinarizer(p_mlb)
 
 
 def file():
-    target_file = "code/helloworld.java" # Add the path to your file
+    target_file = "examples/helloworld.java" # Add the path to your file
     methods = get_file_methods(target_file)
 
     with open("./sarif/template.sarif") as f:

@@ -109,13 +109,3 @@ def get_file_methods(target_file):
         print("--- ### ---") """
     
     return methods
-
-#! Test
-if __name__ == "__main__":
-    methods = get_file_methods("./code/helloworld.java")
-    for method in methods:
-        print("--- ### ---")
-        print(method["name"])
-        print(method["code"])
-        print("Line range: ",method["startline"], " - ", method["endline"])
-        print("--- ### ---")

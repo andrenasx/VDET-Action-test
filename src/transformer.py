@@ -1,4 +1,3 @@
-from collections import OrderedDict
 import torch
 import torch.nn as nn
 import transformers
@@ -51,7 +50,7 @@ def getModel(pretrained_model_path):
     model = vulnerabilityClassifier(TRAINING_STEPS, N_CLASSES, DROPOUT_PROB)
 
     # original saved file with DataParallel
-    state_dict = torch.load(pretrained_model_path)
+    state_dict = torch.load(pretrained_model_path, map_location=torch.device('cpu'))
 
     model_state_dict = state_dict["model_state_dict"]
     # Replace the key of the state dict, they are not compatible with pretrained model
@@ -69,7 +68,7 @@ def getTokenizer():
 
 
 def getMultilabelBinarizer(mlb_path):
-    return torch.load(mlb_path)
+    return torch.load(mlb_path, map_location=torch.device('cpu'))
 
 
 # Process any length sequence
@@ -121,8 +120,3 @@ def get_labels(mlb, outputs):
         )
 
     return z
-
-#! Test
-if __name__ == '__main__':
-    state_dict = torch.load("./models/model.bin")
-    print(state_dict["model_state_dict"].keys())
