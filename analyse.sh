@@ -1,6 +1,6 @@
 #!/bin/bash
 
-pwd
+cd ${{ github.action_path }}
 
 ls
 
