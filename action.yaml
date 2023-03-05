@@ -12,3 +12,4 @@ runs:
       shell: bash
     - name: Run VDET
       run: ${{ github.action_path }}/analyse.sh
+      shell: bash
