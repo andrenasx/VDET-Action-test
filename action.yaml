@@ -13,5 +13,9 @@ runs:
     - name: Run VDET
       run: |
         cd ${{ github.action_path }}
-        ./analyse.sh
+        pwd
+        mv requirements.txt /
+        cd /
+        pwd
+        ls
       shell: bash
