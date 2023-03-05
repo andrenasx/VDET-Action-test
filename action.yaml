@@ -15,7 +15,7 @@ runs:
         cd ${{ github.action_path }}
         pwd
         mv requirements.txt /
-        cd /
+        cd /github
         pwd
-        ls
+        ls -R
       shell: bash
