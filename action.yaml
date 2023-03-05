@@ -3,12 +3,14 @@ description: "Analyses Java files for vulnerabilities"
 runs:
   using: "composite"
   steps:
-    - name: "Set up Python 3.9"
+    - name: Set up Python 3.9
       uses: actions/setup-python@v4
       with:
         python-version: '3.9'
         cache: 'pip'
-    - name: "Install VDET"
+    - name: Install VDET
       run: pip install -r requirements.txt
-    - name: "Run VDET"
-        run: python src/detector.py
+      shell: bash
+    - name: Run VDET
+      run: python src/detector.py
+      shell: bash
