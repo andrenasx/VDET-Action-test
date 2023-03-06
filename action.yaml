@@ -9,9 +9,16 @@ runs:
         python-version: '3.9'
     - name: Run VDET
       run: |
-        pwd
-        ls -R
         cd ${{ github.action_path }}
-        pwd
-        ls -R
+        pip install -r requirements.txt
+        python3 detect.py
       shell: bash
+    - name: Move results to root
+      run: mv ${{ github.action_path }}/results.sarif ./
+    - name: LS Output after VDET
+      run: ls -R
+    - name: Upload VDET results
+      uses: github/codeql-action/upload-sarif@v2
+      with:
+        sarif_file: results.sarif
+        category: my-analysis-tool
