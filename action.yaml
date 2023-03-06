@@ -15,8 +15,10 @@ runs:
       shell: bash
     - name: Move results to root
       run: mv ${{ github.action_path }}/results.sarif ./
+      shell: bash
     - name: LS Output after VDET
       run: ls -R
+      shell: bash
     - name: Upload VDET results
       uses: github/codeql-action/upload-sarif@v2
       with:
