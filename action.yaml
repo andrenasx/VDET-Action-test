@@ -10,9 +10,8 @@ runs:
     - name: Run VDET
       run: |
         pwd
+        ls -R
         cd ${{ github.action_path }}
-        pwd
-        cd /github
         pwd
         ls -R
       shell: bash
