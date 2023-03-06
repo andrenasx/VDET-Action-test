@@ -11,7 +11,7 @@ runs:
       run: |
         cd ${{ github.action_path }}
         pip install -r requirements.txt
-        python3 detect.py
+        python3 detector.py
       shell: bash
     - name: Move results to root
       run: mv ${{ github.action_path }}/results.sarif ./
