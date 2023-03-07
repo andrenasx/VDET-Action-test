@@ -1,4 +1,4 @@
-name: 'VDET for Java
+name: 'VDET for Java'
 description: 'Analyses Java files for vulnerabilities'
 runs:
   using: 'docker'
