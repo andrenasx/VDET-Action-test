@@ -1,26 +1,5 @@
-name: "VDET for Java"
-description: "Analyses Java files for vulnerabilities"
+name: 'VDET for Java
+description: 'Analyses Java files for vulnerabilities'
 runs:
-  using: "composite"
-  steps:
-    - name: Set up Python 3.9
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.9'
-    - name: Run VDET
-      run: |
-        cd ${{ github.action_path }}
-        pip install -r requirements.txt
-        python3 src/detector.py
-      shell: bash
-    - name: Move results to root
-      run: mv ${{ github.action_path }}/results.sarif ./
-      shell: bash
-    - name: LS Output after VDET
-      run: ls -R
-      shell: bash
-    - name: Upload VDET results
-      uses: github/codeql-action/upload-sarif@v2
-      with:
-        sarif_file: results.sarif
-        category: my-analysis-tool
+  using: 'docker'
+  image: 'up201806461/vdet'
