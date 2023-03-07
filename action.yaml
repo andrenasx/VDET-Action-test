@@ -2,4 +2,4 @@ name: 'VDET for Java'
 description: 'Analyses Java files for vulnerabilities'
 runs:
   using: 'docker'
-  image: 'up201806461/vdet'
+  image: 'docker://up201806461/vdet'
