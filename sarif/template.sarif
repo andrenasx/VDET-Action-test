@@ -23,13 +23,14 @@
                                 "text": "For more information, see the CWE-15 page on the MITRE website: https://cwe.mitre.org/data/definitions/15.html",
                                 "markdown": "For more information, see the [CWE-15 page](https://cwe.mitre.org/data/definitions/15.html) on the MITRE website."
                             },
-                            "messageStrings": {
-                                "default": {
-                                    "text": "CWE-{0} predicted with {1}% probability. One or more system settings or configuration elements can be externally controlled by a user."
-                                }
-                            },
                             "defaultConfiguration": {
                                 "level": "warning"
+                            },
+                            "properties" : {
+                                "tags" : [
+                                    "security",
+                                    "CWE-15"
+                                ]
                             }
                         },
                         {
@@ -46,13 +47,14 @@
                                 "text": "For more information, see the CWE-23 page on the MITRE website: https://cwe.mitre.org/data/definitions/23.html",
                                 "markdown": "For more information, see the [CWE-23 page](https://cwe.mitre.org/data/definitions/23.html) on the MITRE website."
                             },
-                            "messageStrings": {
-                                "default": {
-                                    "text": "CWE-{0} predicted with {1}% probability. The software uses external input to construct a pathname that should be within a restricted directory, but it does not properly neutralize sequences such as \"..\" that can resolve to a location that is outside of that directory."
-                                }
-                            },
                             "defaultConfiguration": {
                                 "level": "warning"
+                            },
+                            "properties" : {
+                                "tags" : [
+                                    "security",
+                                    "CWE-23"
+                                ]
                             }
                         },
                         {
@@ -69,13 +71,14 @@
                                 "text": "For more information, see the CWE-36 page on the MITRE website: https://cwe.mitre.org/data/definitions/36.html",
                                 "markdown": "For more information, see the [CWE-36 page](https://cwe.mitre.org/data/definitions/36.html) on the MITRE website."
                             },
-                            "messageStrings": {
-                                "default": {
-                                    "text": "CWE-{0} predicted with {1}% probability. The software uses external input to construct a pathname that should be within a restricted directory, but it does not properly neutralize absolute path sequences such as \"/abs/path\" that can resolve to a location that is outside of that directory."
-                                }
-                            },
                             "defaultConfiguration": {
                                 "level": "warning"
+                            },
+                            "properties" : {
+                                "tags" : [
+                                    "security",
+                                    "CWE-36"
+                                ]
                             }
                         },
                         {
@@ -92,13 +95,14 @@
                                 "text": "For more information, see the CWE-78 page on the MITRE website: https://cwe.mitre.org/data/definitions/78.html",
                                 "markdown": "For more information, see the [CWE-78 page](https://cwe.mitre.org/data/definitions/78.html) on the MITRE website."
                             },
-                            "messageStrings": {
-                                "default": {
-                                    "text": "CWE-{0} predicted with {1}% probability. The software constructs all or part of an OS command using externally-influenced input from an upstream component, but it does not neutralize or incorrectly neutralizes special elements that could modify the intended OS command when it is sent to a downstream component."
-                                }
-                            },
                             "defaultConfiguration": {
                                 "level": "warning"
+                            },
+                            "properties" : {
+                                "tags" : [
+                                    "security",
+                                    "CWE-78"
+                                ]
                             }
                         },
                         {
@@ -115,13 +119,14 @@
                                 "text": "For more information, see the CWE-80 page on the MITRE website: https://cwe.mitre.org/data/definitions/80.html",
                                 "markdown": "For more information, see the [CWE-80 page](https://cwe.mitre.org/data/definitions/80.html) on the MITRE website."
                             },
-                            "messageStrings": {
-                                "default": {
-                                    "text": "CWE-{0} predicted with {1}% probability. The software receives input from an upstream component, but it does not neutralize or incorrectly neutralizes special characters such as \"<\", \">\", and \"&\" that could be interpreted as web-scripting elements when they are sent to a downstream component that processes web pages."
-                                }
-                            },
                             "defaultConfiguration": {
                                 "level": "warning"
+                            },
+                            "properties" : {
+                                "tags" : [
+                                    "security",
+                                    "CWE-80"
+                                ]
                             }
                         },
                         {
@@ -138,13 +143,14 @@
                                 "text": "For more information, see the CWE-89 page on the MITRE website: https://cwe.mitre.org/data/definitions/89.html",
                                 "markdown": "For more information, see the [CWE-89 page](https://cwe.mitre.org/data/definitions/89.html) on the MITRE website."
                             },
-                            "messageStrings": {
-                                "default": {
-                                    "text": "CWE-{0} predicted with {1}% probability. The software constructs all or part of an SQL command using externally-influenced input from an upstream component, but it does not neutralize or incorrectly neutralizes special elements that could modify the intended SQL command when it is sent to a downstream component."
-                                }
-                            },
                             "defaultConfiguration": {
                                 "level": "warning"
+                            },
+                            "properties" : {
+                                "tags" : [
+                                    "security",
+                                    "CWE-89"
+                                ]
                             }
                         },
                         {
@@ -158,13 +164,14 @@
                                 "text": "For more information, see the CWE-90 page on the MITRE website: https://cwe.mitre.org/data/definitions/90.html",
                                 "markdown": "For more information, see the [CWE-90 page](https://cwe.mitre.org/data/definitions/90.html) on the MITRE website."
                             },
-                            "messageStrings": {
-                                "default": {
-                                    "text": "CWE-{0} predicted with {1}% probability. The software constructs all or part of an LDAP query using externally-influenced input from an upstream component, but it does not neutralize or incorrectly neutralizes special elements that could modify the intended LDAP query when it is sent to a downstream component."
-                                }
-                            },
                             "defaultConfiguration": {
                                 "level": "warning"
+                            },
+                            "properties" : {
+                                "tags" : [
+                                    "security",
+                                    "CWE-90"
+                                ]
                             }
                         },
                         {
@@ -181,13 +188,14 @@
                                 "text": "For more information, see the CWE-113 page on the MITRE website: https://cwe.mitre.org/data/definitions/113.html",
                                 "markdown": "For more information, see the [CWE-113 page](https://cwe.mitre.org/data/definitions/113.html) on the MITRE website."
                             },
-                            "messageStrings": {
-                                "default": {
-                                    "text": "CWE-{0} predicted with {1}% probability. The software receives data from an HTTP agent/component (e.g., web server, proxy, browser, etc.), but it does not neutralize or incorrectly neutralizes CR and LF characters before the data is included in outgoing HTTP headers."
-                                }
-                            },
                             "defaultConfiguration": {
                                 "level": "warning"
+                            },
+                            "properties" : {
+                                "tags" : [
+                                    "security",
+                                    "CWE-113"
+                                ]
                             }
                         },
                         {
@@ -201,13 +209,14 @@
                                 "text": "For more information, see the CWE-129 page on the MITRE website: https://cwe.mitre.org/data/definitions/129.html",
                                 "markdown": "For more information, see the [CWE-129 page](https://cwe.mitre.org/data/definitions/129.html) on the MITRE website."
                             },
-                            "messageStrings": {
-                                "default": {
-                                    "text": "CWE-{0} predicted with {1}% probability. The product uses untrusted input when calculating or using an array index, but the product does not validate or incorrectly validates the index to ensure the index references a valid position within the array."
-                                }
-                            },
                             "defaultConfiguration": {
                                 "level": "warning"
+                            },
+                            "properties" : {
+                                "tags" : [
+                                    "security",
+                                    "CWE-129"
+                                ]
                             }
                         },
                         {
@@ -224,13 +233,14 @@
                                 "text": "For more information, see the CWE-134 page on the MITRE website: https://cwe.mitre.org/data/definitions/134.html",
                                 "markdown": "For more information, see the [CWE-134 page](https://cwe.mitre.org/data/definitions/134.html) on the MITRE website."
                             },
-                            "messageStrings": {
-                                "default": {
-                                    "text": "CWE-{0} predicted with {1}% probability. The software uses a function that accepts a format string as an argument, but the format string originates from an external source."
-                                }
-                            },
                             "defaultConfiguration": {
                                 "level": "warning"
+                            },
+                            "properties" : {
+                                "tags" : [
+                                    "security",
+                                    "CWE-134"
+                                ]
                             }
                         },
                         {
@@ -247,13 +257,14 @@
                                 "text": "For more information, see the CWE-190 page on the MITRE website: https://cwe.mitre.org/data/definitions/190.html",
                                 "markdown": "For more information, see the [CWE-190 page](https://cwe.mitre.org/data/definitions/190.html) on the MITRE website."
                             },
-                            "messageStrings": {
-                                "default": {
-                                    "text": "CWE-{0} predicted with {1}% probability. The software performs a calculation that can produce an integer overflow or wraparound, when the logic assumes that the resulting value will always be larger than the original value. This can introduce other weaknesses when the calculation is used for resource management or execution control."
-                                }
-                            },
                             "defaultConfiguration": {
                                 "level": "warning"
+                            },
+                            "properties" : {
+                                "tags" : [
+                                    "security",
+                                    "CWE-190"
+                                ]
                             }
                         },
                         {
@@ -270,13 +281,14 @@
                                 "text": "For more information, see the CWE-191 page on the MITRE website: https://cwe.mitre.org/data/definitions/191.html",
                                 "markdown": "For more information, see the [CWE-191 page](https://cwe.mitre.org/data/definitions/191.html) on the MITRE website."
                             },
-                            "messageStrings": {
-                                "default": {
-                                    "text": "CWE-{0} predicted with {1}% probability. The product subtracts one value from another, such that the result is less than the minimum allowable integer value, which produces a value that is not equal to the correct result."
-                                }
-                            },
                             "defaultConfiguration": {
                                 "level": "warning"
+                            },
+                            "properties" : {
+                                "tags" : [
+                                    "security",
+                                    "CWE-191"
+                                ]
                             }
                         },
                         {
@@ -293,13 +305,14 @@
                                 "text": "For more information, see the CWE-197 page on the MITRE website: https://cwe.mitre.org/data/definitions/197.html",
                                 "markdown": "For more information, see the [CWE-197 page](https://cwe.mitre.org/data/definitions/197.html) on the MITRE website."
                             },
-                            "messageStrings": {
-                                "default": {
-                                    "text": "CWE-{0} predicted with {1}% probability. Truncation errors occur when a primitive is cast to a primitive of a smaller size and data is lost in the conversion."
-                                }
-                            },
                             "defaultConfiguration": {
                                 "level": "warning"
+                            },
+                            "properties" : {
+                                "tags" : [
+                                    "security",
+                                    "CWE-197"
+                                ]
                             }
                         },
                         {
@@ -316,13 +329,14 @@
                                 "text": "For more information, see the CWE-319 page on the MITRE website: https://cwe.mitre.org/data/definitions/319.html",
                                 "markdown": "For more information, see the [CWE-319 page](https://cwe.mitre.org/data/definitions/319.html) on the MITRE website."
                             },
-                            "messageStrings": {
-                                "default": {
-                                    "text": "CWE-{0} predicted with {1}% probability. The software transmits sensitive or security-critical data in cleartext in a communication channel that can be sniffed by unauthorized actors."
-                                }
-                            },
                             "defaultConfiguration": {
                                 "level": "warning"
+                            },
+                            "properties" : {
+                                "tags" : [
+                                    "security",
+                                    "CWE-319"
+                                ]
                             }
                         },
                         {
@@ -339,13 +353,14 @@
                                 "text": "For more information, see the CWE-269 page on the MITRE website: https://cwe.mitre.org/data/definitions/369.html",
                                 "markdown": "For more information, see the [CWE-369 page](https://cwe.mitre.org/data/definitions/369.html) on the MITRE website."
                             },
-                            "messageStrings": {
-                                "default": {
-                                    "text": "CWE-{0} predicted with {1}% probability. The product divides a value by zero."
-                                }
-                            },
                             "defaultConfiguration": {
                                 "level": "warning"
+                            },
+                            "properties" : {
+                                "tags" : [
+                                    "security",
+                                    "CWE-369"
+                                ]
                             }
                         },
                         {
@@ -362,13 +377,14 @@
                                 "text": "For more information, see the CWE-400 page on the MITRE website: https://cwe.mitre.org/data/definitions/400.html",
                                 "markdown": "For more information, see the [CWE-400 page](https://cwe.mitre.org/data/definitions/400.html) on the MITRE website."
                             },
-                            "messageStrings": {
-                                "default": {
-                                    "text": "CWE-{0} predicted with {1}% probability. The software does not properly control the allocation and maintenance of a limited resource, thereby enabling an actor to influence the amount of resources consumed, eventually leading to the exhaustion of available resources."
-                                }
-                            },
                             "defaultConfiguration": {
                                 "level": "warning"
+                            },
+                            "properties" : {
+                                "tags" : [
+                                    "security",
+                                    "CWE-400"
+                                ]
                             }
                         },
                         {
@@ -385,13 +401,14 @@
                                 "text": "For more information, see the CWE-470 page on the MITRE website: https://cwe.mitre.org/data/definitions/470.html",
                                 "markdown": "For more information, see the [CWE-470 page](https://cwe.mitre.org/data/definitions/470.html) on the MITRE website."
                             },
-                            "messageStrings": {
-                                "default": {
-                                    "text": "CWE-{0} predicted with {1}% probability. The application uses external input with reflection to select which classes or code to use, but it does not sufficiently prevent the input from selecting improper classes or code."
-                                }
-                            },
                             "defaultConfiguration": {
                                 "level": "warning"
+                            },
+                            "properties" : {
+                                "tags" : [
+                                    "security",
+                                    "CWE-470"
+                                ]
                             }
                         },
                         {
@@ -405,13 +422,14 @@
                                 "text": "For more information, see the CWE-606 page on the MITRE website: https://cwe.mitre.org/data/definitions/606.html",
                                 "markdown": "For more information, see the [CWE-606 page](https://cwe.mitre.org/data/definitions/606.html) on the MITRE website."
                             },
-                            "messageStrings": {
-                                "default": {
-                                    "text": "CWE-{0} predicted with {1}% probability. The product does not properly check inputs that are used for loop conditions, potentially leading to a denial of service or other consequences because of excessive looping."
-                                }
-                            },
                             "defaultConfiguration": {
                                 "level": "warning"
+                            },
+                            "properties" : {
+                                "tags" : [
+                                    "security",
+                                    "CWE-606"
+                                ]
                             }
                         },
                         {
@@ -428,13 +446,14 @@
                                 "text": "For more information, see the CWE-643 page on the MITRE website: https://cwe.mitre.org/data/definitions/643.html",
                                 "markdown": "For more information, see the [CWE-643 page](https://cwe.mitre.org/data/definitions/643.html) on the MITRE website."
                             },
-                            "messageStrings": {
-                                "default": {
-                                    "text": "CWE-{0} predicted with {1}% probability. The software uses external input to dynamically construct an XPath expression used to retrieve data from an XML database, but it does not neutralize or incorrectly neutralizes that input. This allows an attacker to control the structure of the query."
-                                }
-                            },
                             "defaultConfiguration": {
                                 "level": "warning"
+                            },
+                            "properties" : {
+                                "tags" : [
+                                    "security",
+                                    "CWE-643"
+                                ]
                             }
                         },
                         {
@@ -451,13 +470,14 @@
                                 "text": "For more information, see the CWE-690 page on the MITRE website: https://cwe.mitre.org/data/definitions/690.html",
                                 "markdown": "For more information, see the [CWE-690 page](https://cwe.mitre.org/data/definitions/690.html) on the MITRE website."
                             },
-                            "messageStrings": {
-                                "default": {
-                                    "text": "CWE-{0} predicted with {1}% probability. The product does not check for an error after calling a function that can return with a NULL pointer if the function fails, which leads to a resultant NULL pointer dereference."
-                                }
-                            },
                             "defaultConfiguration": {
                                 "level": "warning"
+                            },
+                            "properties" : {
+                                "tags" : [
+                                    "security",
+                                    "CWE-690"
+                                ]
                             }
                         },
                         {
@@ -471,13 +491,14 @@
                                 "text": "For more information, see the CWE-789 page on the MITRE website: https://cwe.mitre.org/data/definitions/789.html",
                                 "markdown": "For more information, see the [CWE-789 page](https://cwe.mitre.org/data/definitions/789.html) on the MITRE website."
                             },
-                            "messageStrings": {
-                                "default": {
-                                    "text": "CWE-{0} predicted with {1}% probability. The product allocates memory based on an untrusted, large size value, but it does not ensure that the size is within expected limits, allowing arbitrary amounts of memory to be allocated."
-                                }
-                            },
                             "defaultConfiguration": {
                                 "level": "warning"
+                            },
+                            "properties" : {
+                                "tags" : [
+                                    "security",
+                                    "CWE-789"
+                                ]
                             }
                         }
                     ]
