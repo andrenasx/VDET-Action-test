@@ -102,10 +102,5 @@ def get_file_methods(target_file):
         method_text, startline, endline, lex = get_method_text(codelines, startpos, endpos, startline, endline, lex)
 
         methods.append({"name": method_node.name, "code": method_text, "startline": startline, "endline": endline})
-
-        """ print("--- ### ---")
-        print(method_text)
-        print("Line range: ", startline, " - ", endline)
-        print("--- ### ---") """
     
     return methods
