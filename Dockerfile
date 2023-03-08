@@ -1,12 +1,5 @@
-FROM python:3.9-alpine3.17
+FROM python:3.9-slim-bullseye
 
-RUN pip install --upgrade pip
+COPY . /vdet
 
-COPY requirements.txt /app/requirements.txt
-
-WORKDIR /app
-RUN pip install -r requirements.txt
-
-COPY . /app
-
-CMD ["ls", "-a"]
+ENTRYPOINT ["/vdet/entrypoint.sh"]
