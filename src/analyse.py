@@ -1,22 +1,23 @@
 from dotenv import load_dotenv
-import os
+from os import getenv
+import sys
 
 import json
 import glob
 
 import torch
 from transformer import getModel, getTokenizer, getMultilabelBinarizer, process_sequence, get_labels
-from utils import clean_code, flatten_list, remove_duplicate_labels, get_file_methods
+from utils import clean_code, flatten_list, remove_duplicate_labels, get_file_methods, GITHUB_WORKSPACE, process_input_files, process_input_paths
 
 
 # Load model, tokenizer and multilabel binarizer
 load_dotenv()
-model = getModel(os.getenv("MODEL_PATH"))
+model = getModel(getenv("MODEL_PATH"))
 tokenizer = getTokenizer()
-mlb = getMultilabelBinarizer(os.getenv("BINARIZER_PATH"))
+mlb = getMultilabelBinarizer(getenv("BINARIZER_PATH"))
 
 # CWEs: 15, 23, 36, 78, 80, 89, 90, 113, 129, 134, 190, 191, 197, 319, 369, 400, 470, 606, 643, 690, 789
-cwe_desc = {
+CWE_DESC = {
     "15": "One or more system settings or configuration elements can be externally controlled by a user.",
     "23": "The product uses external input to construct a pathname that should be within a restricted directory, but it does not properly neutralize sequences such as \"..\" that can resolve to a location that is outside of that directory.",
     "36": "The product uses external input to construct a pathname that should be within a restricted directory, but it does not properly neutralize absolute path sequences such as \"/abs/path\" that can resolve to a location that is outside of that directory.",
@@ -40,15 +41,33 @@ cwe_desc = {
     "789": "The product allocates memory based on an untrusted, large size value, but it does not ensure that the size is within expected limits, allowing arbitrary amounts of memory to be allocated."
 }
 
+
 def file():
     results = []
+    files = set()
 
     # Load the template SARIF file
     with open("./sarif/template.sarif") as f:
         results_sarif = json.load(f)
 
-    # Get all Java files in the repository
-    files = glob.glob("/github/workspace" + '/**/*.java', recursive=True)
+    # Process Action inputs
+    input_paths = process_input_paths(sys.argv[1])
+    input_files = process_input_files(sys.argv[2])
+
+    # DEFAULT: Get all repo files if no input is provided
+    if not input_files and not input_paths:
+        files.update(glob.glob(GITHUB_WORKSPACE + '/**/*.java', recursive=True))
+        print("Analyzing all Java files in this repository.")
+
+    else:
+        if input_paths:
+            for p in input_paths:
+                files.update(glob.glob(p + '/**/*.java', recursive=True))
+                print("Analyzing all Java files in " + p)
+
+        if input_files:
+            files.update(input_files)
+            print("Analyzing specific Java files: " + str(input_files))
 
     # Iterate through all the files
     for target_file in files:
@@ -90,13 +109,13 @@ def file():
             results.append({
                 "ruleId": "VDET/CWE-" + noDup_labels[0][0],
                 "message": {
-                    "text": "CWE-" + noDup_labels[0][0] + " predicted with " + str(round(float(noDup_labels[0][1])*100, 2)) + "% probability. " +  cwe_desc[noDup_labels[0][0]]
+                    "text": "CWE-" + noDup_labels[0][0] + " predicted with " + str(round(float(noDup_labels[0][1])*100, 2)) + "% probability. " +  CWE_DESC[noDup_labels[0][0]]
                 },
                 "locations": [
                     {
                         "physicalLocation": {
                             "artifactLocation": {
-                                "uri": target_file.removeprefix("/github/workspace/"),
+                                "uri": target_file.removeprefix(GITHUB_WORKSPACE),
                                 "uriBaseId": "%SRCROOT%"
                             },
                             "region": {
@@ -111,6 +130,8 @@ def file():
 
     # Update the results in the SARIF file
     results_sarif['runs'][0].update({"results": results})
+
+    print("Total number of vulnerabilities found: " + str(len(results)))
 
     with open("./results.sarif", "w") as f:
         json.dump(results_sarif, f, indent=2)

@@ -1,5 +1,45 @@
+from os import path
 import re
 import javalang
+
+GITHUB_WORKSPACE = "/github/workspace/"
+
+#* Action input related functions
+
+def process_input_files(input):
+    if not input:
+        return ""
+    
+    files_temp = input.split()
+    files = []
+
+    # Check if the Java file exists in the repository
+    for file in files_temp:
+        abs_path = GITHUB_WORKSPACE + file
+
+        if file.endswith(".java") and path.isfile(abs_path):
+            files.append(abs_path)
+
+    print(str(len(files)) + " input Java files found in the repository")
+    return files
+
+def process_input_paths(input):
+    if not input:
+        return ""
+    
+    paths_temp = input.split()
+    paths = []
+
+    # Check if the path exists in the repository
+    for p in paths_temp:
+        abs_path = GITHUB_WORKSPACE + p
+
+        if path.isdir(abs_path):
+            paths.append(abs_path)
+
+    print(str(len(paths)) + " input paths found in the repository")
+    return paths
+
 
 #* Code related functions
 
