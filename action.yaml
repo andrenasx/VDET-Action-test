@@ -3,7 +3,7 @@ description: 'Analyses Java files for vulnerabilities'
 
 inputs:
   paths:
-      description: 'Paths to analyse (separated by spaces)'
+      description: 'Paths to analyse (relative to the repository root, separated by spaces)'
       required: false
       default: ''
   files:

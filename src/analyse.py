@@ -137,4 +137,8 @@ def file():
         json.dump(results_sarif, f, indent=2)
 
 if __name__ == '__main__':
+    if len(sys.argv) != 3:
+        print("Please provide the input paths and files as arguments (empty string if none).")
+        sys.exit(1)
+
     file()

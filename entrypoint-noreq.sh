@@ -9,6 +9,6 @@ cd /vdet
 pip install -r requirements.txt
 
 # Run the detector
-python src/analyse.py
+python src/analyse.py "$1" "$2"
 
 mv results.sarif /github/workspace
